@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy My PDF – Share ROADMAP</title>
+<style>
+body{font-family:Arial;background:#f6f7fb;padding:20px;}
+.container{max-width:450px;margin:auto;background:white;padding:25px;
+border-radius:15px;box-shadow:0 0 12px rgba(0,0,0,0.1);}
+h2{text-align:center;}
+.btn{width:100%;padding:12px;font-size:16px;border:none;border-radius:8px;
+background:#4CAF50;color:white;cursor:pointer;margin-top:10px;}
+.btn:disabled{background:gray;cursor:not-allowed;}
+input{width:100%;padding:10px;margin-top:10px;border-radius:8px;border:1px solid #ccc;}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Buy & Download “Share ROADMAP” PDF</h2>
+<p><b>Price:</b> ₹99</p>
+<h3>Step 1: Make Payment</h3>
+<p>Pay using UPI:</p>
+<div style="background:#f1f1f1;padding:10px;border-radius:10px;">
+<p><b>UPI ID:</b> rm2223799-1@okicici</p>
+<img src="upiqr.png" width="100%">
+</div>
+<h3>Step 2: Verify Payment</h3>
+<p>Enter the payment Transaction ID:</p>
+<input id="txnInput" placeholder="Enter Transaction ID">
+<button class="btn" onclick="verifyPayment()">Verify Payment</button>
+<a id="downloadBtn" class="btn" style="display:none;" href="roadmap.pdf" download>
+Download PDF</a>
+</div>
+<script>
+function verifyPayment(){
+ let txn=document.getElementById("txnInput").value;
+ let correct="ROADMAP2024";
+ if(txn===correct){
+   document.getElementById("downloadBtn").style.display="block";
+   alert("Payment verified! Download unlocked.");
+ } else alert("Invalid Transaction ID.");
+}
+</script>
+</body></html>
